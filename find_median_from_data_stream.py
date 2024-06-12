@@ -34,10 +34,10 @@ class MedianFinder:
             val = heapq.heappop(self.large)
             heapq.heappush(self.small, -1 * val)
 
-    def findMedian(self) -> float:
-        if len(self.small) > len(self.large): # if small has more elements than large, return small's root value
+     def findMedian(self) -> float:
+        if len(self.small) > len(self.large): # if small has more elements than large, return small's root value (if odd)
             return -1 * self.small[0]
-        if len(self.large) > len(self.small): # if large has more elements than small, return large's root value
+        if len(self.large) > len(self.small): # if large has more elements than small, return large's root value (if odd)
             return self.large[0]
         return (-1 * self.small[0] + self.large[0]) / 2 # otherwise, return the median values as expected and described
     # above
